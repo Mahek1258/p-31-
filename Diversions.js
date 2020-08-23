@@ -6,11 +6,11 @@ class Diversions{
         friction : 0.5,
         density : 1.2
     }
-    this.body = Bodies.rectangle(x, y,20,200, options);
+    this.body = Bodies.rectangle(x, y,10,200, options);
      this.x = x;
      this.y = y;
      this.height = 200;
-     this.width = 30
+     this.width = 10;
       World.add(world, this.body);
     }
     display(){

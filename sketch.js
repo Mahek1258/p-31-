@@ -8,7 +8,7 @@ var particle = [];
 var pingo =[];
 var divisions = [];
 
-var ground;
+var ground , ground2 , ground3 , ground4;
 
 var divisionHeight = 300;
 function preload()
@@ -34,12 +34,10 @@ function setup() {
 		pingo.push(new Pingo(j,275))
 	}
 
-	ground = new Ground()
-	if(frameCount%20===0){
-		particle.push(new Particle(random(width/2*10,width/2+10),10));
-		console.log(3);
-	}
-
+	ground  = new Ground(240,800,480,20);
+	ground2 = new Ground(240,0,480,20);
+	ground3 = new Ground(0,400,20,800);
+	ground4 = new Ground(480,400,20,800);
 	Engine.run(engine);
   
 }
@@ -57,7 +55,15 @@ function draw() {
   divisions[k].display();
   }
 
-  ground.display();
+  ground .display();
+  ground2.display();
+  ground3.display();
+  ground4.display();
+
+  if(frameCount%60===0){
+	particle.push(new Particle(random(width/2*10,width/2+10),10));
+	console.log(3);
+}
 
   for(var j =0;j<particle.length;j++){
 	particle[j].display();
